@@ -30,12 +30,14 @@ CREATE TABLE students (
     middle_name VARCHAR(255) NULL,
     last_name VARCHAR(255) NOT NULL,
     course ENUM(
-        'College of Accountancy',
-        'College of Business Administration',
-        'College of Arts, Sciences and Education',
-        'College of Nursing',
-        'College of Medical Laboratory Science',
-        'College of Engineering'
+        'BSA', 
+        'BSBA', 
+        'BSIT', 
+        'BSN', 
+        'BSMLS', 
+        'BSCE', 
+        'BSP', 
+        'BSTM'
     ) NULL,
     year_section VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
