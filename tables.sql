@@ -23,34 +23,36 @@ CREATE TABLE inventory(
     ) STORED 
 );
 
-CREATE TABLE transaction(
-    CREATE TABLE transactions (
-    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    student_id INT NOT NULL,
-    concern ENUM('Medicine','Supply') NOT NULL,
-    department ENUM(
-        'College of Accountancy', 
-        'College of Business Administration', 
-        'College of Arts, Sciences and Education', 
-        'College of Nursing', 'College of Medical Laboratory Science', 
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id_num VARCHAR(255) NOT NULL UNIQUE,
+    first_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255) NULL,
+    last_name VARCHAR(255) NOT NULL,
+    course ENUM(
+        'College of Accountancy',
+        'College of Business Administration',
+        'College of Arts, Sciences and Education',
+        'College of Nursing',
+        'College of Medical Laboratory Science',
         'College of Engineering'
-        ) NOT NULL,
-    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    FOREIGN KEY (student_id) REFERENCES students(student_id)
+    ) NULL,
+    year_section VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    phone_num VARCHAR(20) NOT NULL,
+    birthdate DATE NOT NULL,
+    age INT NOT NULL,
+    gender ENUM ('Male', 'Female') NOT NULL,
+    student_type ENUM ('Elementary', 'Junior High School', 'Senior High', 'College') NOT NULL,
+    address VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE students(
-    id int AUTO_INCREMENT PRIMARY KEY,
-    student_id_num VARCHAR(255) NOT NULL,
-    first_name VARCHAR(255) NOT NULL,
-    middle_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    year_section VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    phone_num VARCHAR(255) NOT NULL,
-    birthdate VARCHAR(255) NOT NULL,
-    age VARCHAR(255) NOT NULL,
-    gender VARCHAR(255) NOT NULL,
-    student_type VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL
+CREATE TABLE transactions (
+    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    concern ENUM('Medicine','Necessities', 'Clinic Admission') NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+    ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (student_id) REFERENCES students(id)
 );
