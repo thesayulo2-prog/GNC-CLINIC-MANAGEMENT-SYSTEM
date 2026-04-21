@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background-color: #2d4739;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo-container img {
+    width: 100px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.nav-menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.nav-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-item.active {
+    background-color: white;
+    color: #2d4739;
+    margin: 0 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.header {
+    background-color: #2d4739;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dashboard-container {
+    padding: 20px;
+}
+
+.top-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.white-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.transaction-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.transaction-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.status-necessities { color: #3498db; }
+.status-admitted { color: #e74c3c; }
+.status-medicine { color: #2ecc71; }
+
+.chart-wrapper p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Icon */
+.nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
