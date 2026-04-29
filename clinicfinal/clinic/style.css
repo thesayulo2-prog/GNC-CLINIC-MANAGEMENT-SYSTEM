@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #e9ecef;
+    min-height: 100vh;
+}
+
+/* SIDEBAR DESIGN */
+#sidebar {
+    width: 260px;
+    background-color: #1a3026;
+    color: white;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.sidebar-logo img {
+    width: 100px;
+    height: 100px;
+    margin-top: 43px;
+    border-radius: 50%;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 15px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 5px;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sidebar-menu li.active {
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 15px;
+}
+
+.sidebar-menu li.active a {
+    color: #1a3026;
+    font-weight: bold;
+}
+
+.nav-icon {
+    width: 20px;
+    margin-right: 15px;
+}
+
+.active .nav-icon {
+    filter: invert(14%) sepia(18%) saturate(1000%) hue-rotate(100deg) brightness(95%) contrast(90%);
+}
+
+/* MAIN CONTENT & TOP NAVBAR */
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-navbar {
+    background-color: #1a3026;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.header-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-right {
+    position: absolute;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-circle img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* FORM CONTAINERS */
+.main-container {
+    padding: 15px 30px 0 20px;
+}
+
+.form-header {
+    background-color: #1a3026;
+    color: rgb(255, 255, 255);
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.form-body {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    margin-top: -13px;
+}
+
+/* FORM GRID */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 7px;
+    font-weight: 500;
+    display: block;
+}
+
+input, select, textarea {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #2d4a3e;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    right: 15px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+textarea {
+    height: 125px;
+    resize: none;
+}
+
+/* BUTTONS */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-cancel {
+    padding: 10px 25px;
+    background: #fff;
+    border: 1.5px solid #224433;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #224433;
+}
+
+.btn-save {
+    padding: 10px 30px;
+    background: #224433;
+    border: 1.5px solid #224433;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* SUCCESS POPUP - Naka-hide sa simula */
+.success-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Madilim na background para sa focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pinaka-ibabaw */
+}
+
+.success-popup {
+    background: #ffffff;
+    padding: 40px 80px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
